@@ -33,4 +33,19 @@ def softmax():
 # test = softmax()
 # print(test)
 
-def cross_entropy: 
+def cross_entropy():
+    softmax_output = [0.7, 0.1, 0.2]
+    target_output = [1, 0 , 0]
+    save = []
+    for x , y in zip(softmax_output, target_output):
+        cross_entropy_loss =  -y*math.log(x)
+        save.append(cross_entropy_loss)
+        print(f"Cross Entropy Loss for each: {cross_entropy_loss}")
+    total_loss = sum(save)
+    return print(f"Cross Entropy Loss: {total_loss}")
+
+test = cross_entropy()
+print(test)
+
+
+    
