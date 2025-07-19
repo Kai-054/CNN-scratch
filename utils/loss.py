@@ -1,5 +1,8 @@
 import math 
 from typing import Optional, Union
+import torch 
+from torch import Tensor 
+
 
 def sigmoid(x):
     f_sigmoid = 1/1+math.exp(-x)
@@ -42,7 +45,8 @@ def cross_entropy():
         save.append(cross_entropy_loss)
         print(f"Cross Entropy Loss for each: {cross_entropy_loss}")
     total_loss = sum(save)
-    return print(f"Cross Entropy Loss: {total_loss}")
+    average_loss = total_loss /len(save)
+    return print(f"Cross Entropy Loss: {total_loss} --- Average Loss: {average_loss}")
 
 test = cross_entropy()
 print(test)
